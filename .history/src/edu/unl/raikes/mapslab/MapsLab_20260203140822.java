@@ -95,7 +95,7 @@ public class MapsLab {
 		for (int i = 0; i < words.length; i++) {
 			for (int j = 0; j < words[i].length(); j++) {
 				if (charCount.containsKey(words[i].charAt(j))) {
-					Set<String> tempSet = charCount.get(words[i].charAt(j));
+					Set<String> tempSet = charCount.get(words[i].length());
 					tempSet.add(words[i]);
 
 					charCount.put(words[i].charAt(j), tempSet);

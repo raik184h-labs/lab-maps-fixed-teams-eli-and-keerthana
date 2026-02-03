@@ -3,7 +3,6 @@ package edu.unl.raikes.mapslab;
 import java.util.Map;
 import java.util.Set;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -17,7 +16,7 @@ public class MapsLab {
 	 */
 	public static void printAMap(Map<? extends Object, ? extends Object> map) {
 		for (Object key : map.keySet()) {
-			System.out.println("Key: " + key + " | Value: " + map.get(key));
+			System.out.println("Key: " + key + "\nValue: " + map.get(key));
 		}
 	}
 
@@ -60,20 +59,16 @@ public class MapsLab {
 
 		for (int i = 0; i < words.length; i++) {
 			if (letterCount.containsKey(words[i].length())) {
-				Set<String> tempSet = letterCount.get(words[i].length());
+				Set<String> tempSet = letterCount.get(words[i]);
 				tempSet.add(words[i]);
 				
-				letterCount.put(words[i].length(), tempSet);
-			} else {
-				Set<String> tempSet = new HashSet<String>();
-
-				tempSet.add(words[i]);
-
 				letterCount.put(words[i].length(), tempSet);
 			}
 		}
 
-		return letterCount;
+
+
+		return null;
 	}
 
 	/**
@@ -90,28 +85,9 @@ public class MapsLab {
 	 */
 	public static Map<Character, Set<String>> getWordsThatIncludeChars(String input) {
 		String[] words = input.split(" +");
-		Map<Character, Set<String>> charCount = new HashMap<Character, Set<String>>();
-
-		for (int i = 0; i < words.length; i++) {
-			for (int j = 0; j < words[i].length(); j++) {
-				if (charCount.containsKey(words[i].charAt(j))) {
-					Set<String> tempSet = charCount.get(words[i].charAt(j));
-					tempSet.add(words[i]);
-
-					charCount.put(words[i].charAt(j), tempSet);
-				} else {
-					Set<String> tempSet = new HashSet<String>();
-					tempSet.add(words[i]);
-
-					charCount.put(words[i].charAt(j), tempSet);
-				}
-			}
-			
-
-		}
 
 		// TODO: do the things
-		return charCount;
+		return null;
 	}
 
 	/**
